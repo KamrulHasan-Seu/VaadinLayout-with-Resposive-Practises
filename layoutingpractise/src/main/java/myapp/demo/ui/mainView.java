@@ -12,8 +12,9 @@ import java.util.List;
 
 @SpringUI
 public class mainView extends UI {
-    VerticalLayout mainLayout ;
+    VerticalLayout mainLayout;
     HorizontalLayout header;
+
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         setMainLayout();
@@ -24,16 +25,16 @@ public class mainView extends UI {
     }
 
     private void setViewContainer() {
-        HorizontalLayout mainContent= new HorizontalLayout();
+        HorizontalLayout mainContent = new HorizontalLayout();
         mainLayout.addComponent(mainContent);
         mainContent.setSizeFull();
-        mainLayout.setExpandRatio(mainContent,1);
+        mainLayout.setExpandRatio(mainContent, 1);
 
         VerticalLayout sidemenu = new VerticalLayout();
         mainContent.addComponent(sidemenu);
         sidemenu.setWidthUndefined();
         sidemenu.setMargin(false);
-        sidemenu.setHeight(100,Unit.PERCENTAGE);
+        sidemenu.setHeight(100, Unit.PERCENTAGE);
         Button link1 = new Button("SignIn");
         link1.setStyleName(ValoTheme.BUTTON_BORDERLESS);
         Button link2 = new Button("SignOut");
@@ -43,22 +44,21 @@ public class mainView extends UI {
         Button link4 = new Button("Admin");
         link4.setStyleName(ValoTheme.BUTTON_BORDERLESS);
 
-        sidemenu.addComponents(link1,link2,link3,link4);
+        sidemenu.addComponents(link1, link2, link3, link4);
 
         sidemenu.setStyleName(ValoTheme.MENU_ROOT);
-        sidemenu.setExpandRatio(link2,1);
-        sidemenu.setExpandRatio(link3,1);
-        sidemenu.setExpandRatio(link4,1);
+        sidemenu.setExpandRatio(link2, 1);
+        sidemenu.setExpandRatio(link3, 1);
+        sidemenu.setExpandRatio(link4, 1);
         //sidemenu.setStyleName(ValoTheme.MENU_ITEM);
 
         Panel panel = new Panel();
         mainContent.addComponent(panel);
         panel.setSizeFull();
         //panel.setStyleName(ValoTheme.PANEL_BORDERLESS);
-        mainContent.setExpandRatio(panel,1);
+        mainContent.setExpandRatio(panel, 1);
         //mainContent.setExpandRatio(panel,2);
     }
-
 
 
     private void setLogo() {
@@ -66,16 +66,16 @@ public class mainView extends UI {
     }
 
     private void setMainLayout() {
-       mainLayout = new VerticalLayout();
+        mainLayout = new VerticalLayout();
         mainLayout.setSizeFull();
-       // mainLayout.setMargin(false);
+        // mainLayout.setMargin(false);
         setContent(mainLayout);
     }
 
-    public void setHeader(){
+    public void setHeader() {
         header = new HorizontalLayout();
         mainLayout.addComponent(header);
-        header.setWidth(100,Unit.PERCENTAGE);
+        header.setWidth(100, Unit.PERCENTAGE);
 
         Label logo = new Label("LOGO");
         //logo.setStyleName(ValoTheme.LABEL_H3);
@@ -85,11 +85,12 @@ public class mainView extends UI {
         logInButton.setIcon(VaadinIcons.PLUS);
         logInButton.setStyleName(ValoTheme.BUTTON_LINK);
         header.addComponent(logInButton);
-        header.setComponentAlignment(logInButton,Alignment.TOP_RIGHT);
+        header.setComponentAlignment(logInButton, Alignment.TOP_RIGHT);
     }
-    public List<studentModel> getAll(){
-        studentModel s = new studentModel(2,"Kamrul");
-        studentModel s1 = new studentModel(1,"Shamim");
+
+    public List<studentModel> getAll() {
+        studentModel s = new studentModel(2, "Kamrul");
+        studentModel s1 = new studentModel(1, "Shamim");
         List<studentModel> list = new ArrayList<>();
         list.add(s);
         list.add(s1);
